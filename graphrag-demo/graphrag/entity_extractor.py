@@ -32,7 +32,7 @@ async def extract_entities(text: str) -> dict:
     )
     messages = [
         SystemMessage(content="你是知识图谱抽取专家，只输出 JSON。"),
-        HumanMessage(content=EXTRACT_PROMPT.format(text=text)),
+        HumanMessage(content=EXTRACT_PROMPT.replace("{text}", text)),
     ]
     response = await model.ainvoke(messages)
     try:

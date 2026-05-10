@@ -313,5 +313,3 @@ MIT
 <p align="center">
   <sub>Built with LangGraph + Neo4j + Spring Boot + FastAPI</sub>
 </p>
-
-
