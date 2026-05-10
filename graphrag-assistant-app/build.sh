@@ -1,5 +1,5 @@
 
-# 普通镜像构建，随系统版本构�?amd/arm
+# 普通镜像构建，随系统版本构建 amd/arm
 docker build -t system/graphrag-assistant-app:1.0-SNAPSHOT -f ./Dockerfile .
 
 # 兼容 amd、arm 构建镜像

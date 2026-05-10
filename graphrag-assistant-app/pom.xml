@@ -37,7 +37,7 @@
              # mysql 5.x driver-class-name: com.mysql.jdbc.Driver    mysql-connector-java 5.1.34
              # mysql 8.x driver-class-name: com.mysql.cj.jdbc.Driver mysql-connector-java 8.0.22-->
         <dependency>
-            <groupId>mysql</groupId>
+            <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
         </dependency>
         <dependency>
@@ -84,7 +84,7 @@
             <version>2.9.0</version>
         </dependency>
 
-        <!-- 工程模块；启动依�?trigger->domain, infrastructure-->
+        <!-- 工程模块 -->
         <dependency>
             <groupId>com.luminacampus</groupId>
             <artifactId>graphrag-assistant-trigger</artifactId>

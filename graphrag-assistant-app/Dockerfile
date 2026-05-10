@@ -1,7 +1,7 @@
 # 基础镜像
 FROM openjdk:8-jre-slim
 
-# 作�?
+# 作者
 MAINTAINER luminacampus
 
 # 配置
