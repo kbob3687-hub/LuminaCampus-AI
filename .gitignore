@@ -44,13 +44,3 @@ dist/
 venv/
 .env
 *.so
-
-### Node ###
-node_modules/
-package-lock.json
-
-### Claude ###
-.claude/
-
-### Data ###
-data/
