@@ -2,17 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.bugstack</groupId>
-    <artifactId>claudecodedemo</artifactId>
+    <groupId>com.luminacampus</groupId>
+    <artifactId>graphrag-assistant</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>claudecodedemo-app</module>
-        <module>claudecodedemo-domain</module>
-        <module>claudecodedemo-trigger</module>
-        <module>claudecodedemo-infrastructure</module>
-        <module>claudecodedemo-types</module>
+        <module>graphrag-assistant-app</module>
+        <module>graphrag-assistant-domain</module>
+        <module>graphrag-assistant-trigger</module>
+        <module>graphrag-assistant-infrastructure</module>
+        <module>graphrag-assistant-types</module>
     </modules>
 
     <repositories>
@@ -39,10 +39,10 @@
 
     <developers>
         <developer>
-            <name>xiaofuge</name>
-            <email>184172133@qq.com</email>
-            <organization>fuzhengwei</organization>
-            <organizationUrl>https://github.com/fuzhengwei</organizationUrl>
+            <name>luminacampus</name>
+            <email>luminacampus@example.com</email>
+            <organization>luminacampus</organization>
+            <organizationUrl>https://github.com/luminacampus</organizationUrl>
         </developer>
     </developers>
 
@@ -129,23 +129,23 @@
 
             <!-- 工程模块 -->
             <dependency>
-                <groupId>cn.bugstack</groupId>
-                <artifactId>claudecodedemo-domain</artifactId>
+                <groupId>com.luminacampus</groupId>
+                <artifactId>graphrag-assistant-domain</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>cn.bugstack</groupId>
-                <artifactId>claudecodedemo-infrastructure</artifactId>
+                <groupId>com.luminacampus</groupId>
+                <artifactId>graphrag-assistant-infrastructure</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>cn.bugstack</groupId>
-                <artifactId>claudecodedemo-types</artifactId>
+                <groupId>com.luminacampus</groupId>
+                <artifactId>graphrag-assistant-types</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-                <groupId>cn.bugstack</groupId>
-                <artifactId>claudecodedemo-trigger</artifactId>
+                <groupId>com.luminacampus</groupId>
+                <artifactId>graphrag-assistant-trigger</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
         </dependencies>
@@ -186,21 +186,21 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <java_jvm>-Xms1G -Xmx1G -server  -XX:MaxPermSize=256M -Xss256K -Dspring.profiles.active=test -XX:+DisableExplicitGC -XX:+UseG1GC  -XX:LargePageSizeInBytes=128m -XX:+UseFastAccessorMethods -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/Logs/claudecodedemo-boot -Xloggc:/export/Logs/claudecodedemo-boot/gc-claudecodedemo-boot.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps</java_jvm>
+                <java_jvm>-Xms1G -Xmx1G -server  -XX:MaxPermSize=256M -Xss256K -Dspring.profiles.active=test -XX:+DisableExplicitGC -XX:+UseG1GC  -XX:LargePageSizeInBytes=128m -XX:+UseFastAccessorMethods -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/Logs/graphrag-assistant-boot -Xloggc:/export/Logs/graphrag-assistant-boot/gc-graphrag-assistant-boot.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps</java_jvm>
                 <profileActive>dev</profileActive>
             </properties>
         </profile>
         <profile>
             <id>test</id>
             <properties>
-                <java_jvm>-Xms1G -Xmx1G -server  -XX:MaxPermSize=256M -Xss256K -Dspring.profiles.active=test -XX:+DisableExplicitGC -XX:+UseG1GC  -XX:LargePageSizeInBytes=128m -XX:+UseFastAccessorMethods -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/Logs/claudecodedemo-boot -Xloggc:/export/Logs/claudecodedemo-boot/gc-claudecodedemo-boot.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps</java_jvm>
+                <java_jvm>-Xms1G -Xmx1G -server  -XX:MaxPermSize=256M -Xss256K -Dspring.profiles.active=test -XX:+DisableExplicitGC -XX:+UseG1GC  -XX:LargePageSizeInBytes=128m -XX:+UseFastAccessorMethods -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/Logs/graphrag-assistant-boot -Xloggc:/export/Logs/graphrag-assistant-boot/gc-graphrag-assistant-boot.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps</java_jvm>
                 <profileActive>test</profileActive>
             </properties>
         </profile>
         <profile>
             <id>prod</id>
             <properties>
-                <java_jvm>-Xms6G -Xmx6G -server  -XX:MaxPermSize=256M -Xss256K -Dspring.profiles.active=release -XX:+DisableExplicitGC -XX:+UseG1GC  -XX:LargePageSizeInBytes=128m -XX:+UseFastAccessorMethods -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/Logs/fq-mall-activity-app -Xloggc:/export/Logs/claudecodedemo-boot/gc-claudecodedemo-boot.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps</java_jvm>
+                <java_jvm>-Xms6G -Xmx6G -server  -XX:MaxPermSize=256M -Xss256K -Dspring.profiles.active=release -XX:+DisableExplicitGC -XX:+UseG1GC  -XX:LargePageSizeInBytes=128m -XX:+UseFastAccessorMethods -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/export/Logs/fq-mall-activity-app -Xloggc:/export/Logs/graphrag-assistant-boot/gc-graphrag-assistant-boot.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps</java_jvm>
                 <profileActive>prod</profileActive>
             </properties>
         </profile>

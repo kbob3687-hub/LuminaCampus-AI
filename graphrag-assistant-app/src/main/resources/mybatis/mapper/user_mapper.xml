@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.luminacampus.infrastructure.persistent.dao.IUserDao">
+
+    <resultMap id="UserMap" type="com.luminacampus.infrastructure.persistent.po.UserPO">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.luminacampus.infrastructure.persistent.po.UserPO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user (username, password)
+        VALUES (#{username}, #{password})
+    </insert>
+
+    <select id="queryByUsername" resultMap="UserMap">
+        SELECT id, username, password, create_time, update_time
+        FROM user
+        WHERE username = #{username}
+    </select>
+
+</mapper>

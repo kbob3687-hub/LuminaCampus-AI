@@ -1,0 +1,1 @@
+package com.luminacampus.infrastructure.gateway.dto;
