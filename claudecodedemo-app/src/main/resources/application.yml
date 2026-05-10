@@ -1,5 +1,0 @@
-spring:
-  config:
-    name: claudecodedemo-app
-  profiles:
-    active: dev

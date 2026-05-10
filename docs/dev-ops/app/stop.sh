@@ -1,1 +1,1 @@
-docker stop claudecodedemo
+docker stop graphrag-assistant

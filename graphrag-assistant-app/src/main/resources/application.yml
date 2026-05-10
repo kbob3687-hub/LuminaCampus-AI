@@ -1,0 +1,5 @@
+spring:
+  config:
+    name: graphrag-assistant-app
+  profiles:
+    active: dev
