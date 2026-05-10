@@ -17,8 +17,8 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
-CREATE database if NOT EXISTS `xfg_frame_archetype` default character set utf8mb4 collate utf8mb4_0900_ai_ci;
-use `xfg_frame_archetype`;
+CREATE database if NOT EXISTS `graphrag_assistant` default character set utf8mb4 collate utf8mb4_0900_ai_ci;
+use `graphrag_assistant`;
 
 -- ----------------------------
 -- Table structure for employee
@@ -106,3 +106,48 @@ BEGIN;
 INSERT INTO `employee_salary_adjust` VALUES (1, '10000001', '109089990198888811', 1000.00, 800.00, 200.00, '2023-07-14 16:55:53', '2023-07-14 16:55:53');
 INSERT INTO `employee_salary_adjust` VALUES (2, '10000001', '100908977676001', 100.00, 20.00, 80.00, '2023-07-14 21:57:39', '2023-07-14 21:57:39');
 COMMIT;
+
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(64) NOT NULL COMMENT '用户名',
+  `password` varchar(128) NOT NULL COMMENT '密码(BCrypt)',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_username` (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
+
+-- ----------------------------
+-- Table structure for document
+-- ----------------------------
+DROP TABLE IF EXISTS `document`;
+CREATE TABLE `document` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint unsigned NOT NULL COMMENT '用户ID',
+  `file_name` varchar(256) NOT NULL COMMENT '文件名',
+  `subject` varchar(64) NOT NULL DEFAULT '' COMMENT '学科',
+  `status` tinyint NOT NULL DEFAULT 0 COMMENT '0-待处理 1-已索引',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='文档表';
+
+-- ----------------------------
+-- Table structure for conversation
+-- ----------------------------
+DROP TABLE IF EXISTS `conversation`;
+CREATE TABLE `conversation` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint unsigned NOT NULL COMMENT '用户ID',
+  `subject` varchar(64) NOT NULL DEFAULT '' COMMENT '学科',
+  `question` text NOT NULL COMMENT '问题',
+  `answer` text COMMENT '回答',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  KEY `idx_user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='对话记录表';

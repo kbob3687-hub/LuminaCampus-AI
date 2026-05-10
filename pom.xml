@@ -19,7 +19,7 @@
         <repository>
             <id>nexus-aliyun</id>
             <name>nexus-aliyun</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <url>https://maven.aliyun.com/repository/public</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -70,7 +70,7 @@
                  # mysql 5.x driver-class-name: com.mysql.jdbc.Driver    mysql-connector-java 5.1.34
                  # mysql 8.x driver-class-name: com.mysql.cj.jdbc.Driver mysql-connector-java 8.0.22-->
             <dependency>
-                <groupId>mysql</groupId>
+                <groupId>com.mysql</groupId>
                 <artifactId>mysql-connector-j</artifactId>
                 <version>8.0.33</version>
             </dependency>
